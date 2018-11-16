@@ -224,6 +224,9 @@ impl<T> MidiInputConnection<T> {
     }
 }
 
+unsafe impl<T> Send for MidiInputConnection<T> {}
+unsafe impl<T> Sync for MidiInputConnection<T> {}
+
 /// This is all the data that is stored on the heap as long as a connection
 /// is opened and passed to the callback handler.
 ///
